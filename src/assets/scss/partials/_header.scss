@@ -2,9 +2,6 @@
 @import "./_mixins.scss";
 
 header {
-    position: fixed;
-    top: 0;
-    left: 0;
     width: 100%;
 
     .fa-phone-alt {
@@ -13,22 +10,17 @@ header {
     }
     
     .header-top {
+        position: fixed;
+        top: 0;
+        left: 10%;
         @include flex(row, $justify: space-between, $align: center, $gap: 0, $wrap: true);
+        background-color: inherit;
         padding: 1em 0;
+        z-index: 999;
+        margin: 0 auto;
 
         img {
-            width: clamp(150px, 16vw, 300px);
-        }
-
-        .fa-bars {
-            display: none;
-            font-size: 1.5em;
-            transition: 0.2s;
-            cursor: pointer;
-
-            &:hover {
-                transform: scale(1.2);
-            }
+            width: clamp(170px, 16vw, 300px);
         }
 
         nav {
@@ -54,13 +46,28 @@ header {
             }
         }
 
-        @media screen and (max-width: 1000px) {
-            .fa-bars {
-                display: block;
-            }
+        .fa-bars {
+            display: none;
+            font-size: 1.5em;
+            transition: 0.2s;
+            cursor: pointer;
 
+            &:hover {
+                transform: scale(1.2);
+            }
+        }
+
+        @media screen and (max-width: 1000px) {
+            img {
+                transform: translateY(2px);
+            }
+        
             nav {
                 display: none;
+            }
+
+            .fa-bars {
+                display: block;
             }
         }
     }
@@ -71,6 +78,7 @@ header {
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
+        margin-top: 70px;
 
         .container {
             @include flex(row, $justify: space-between, $align: none, $gap: 0, $wrap: false);
@@ -149,19 +157,23 @@ header {
                     }
                 }
             }
+        }
 
-            @media screen and (max-width: 768px) {
-                & {
-                    @include flex(column, $justify: center, $align: center, $gap: 30px, $wrap: false);
-                }
+        @media screen and (max-width: 768px) {
+            & {
+                margin-bottom: 300px;
+            }
 
+            .container {
+                @include flex(column, $justify: center, $align: center, $gap: 30px, $wrap: false);
+                
                 .jumbo-left {
                     width: 100%;
                 }
-
+    
                 .container-card {
                     width: 60%;
-
+    
                     .card {
                         right: 0;
                     }
