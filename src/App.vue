@@ -22,5 +22,6 @@ export default {
 </script>
 
 <style lang="scss">
+@import "~bootstrap/scss/bootstrap.scss";
 @import "./assets/scss/partials/_commons.scss";
 </style>
