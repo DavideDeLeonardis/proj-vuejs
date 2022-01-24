@@ -20,6 +20,17 @@ header {
             width: clamp(150px, 16vw, 300px);
         }
 
+        .fa-bars {
+            display: none;
+            font-size: 1.5em;
+            transition: 0.2s;
+            cursor: pointer;
+
+            &:hover {
+                transform: scale(1.2);
+            }
+        }
+
         nav {
             @include flex(row, $justify: space-between, $align: center, $gap: 1em, $wrap: true);
             font-size: 0.8em;
@@ -44,12 +55,12 @@ header {
         }
 
         @media screen and (max-width: 1000px) {
-            & {
-                @include flex(column, $justify: center, $align: center, $gap: 10px, $wrap: true);
+            .fa-bars {
+                display: block;
+            }
 
-                nav {
-                    @include flex(row, $justify: center, $align: center, $gap: 15px, $wrap: true);
-                }
+            nav {
+                display: none;
             }
         }
     }

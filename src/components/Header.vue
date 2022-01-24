@@ -17,6 +17,7 @@
                 </div>
                 <button class="btn">Free Quotes</button>
             </nav>
+            <font-awesome-icon icon="bars" />
         </div>
 
         <div class="jumbo">
@@ -65,9 +66,9 @@
 
 <script>
 import { library } from '@fortawesome/fontawesome-svg-core';
-import { faPhoneAlt, faArrowRight, faFolder } from '@fortawesome/free-solid-svg-icons';
+import { faPhoneAlt, faBars, faArrowRight, faFolder } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
-library.add(faPhoneAlt, faArrowRight, faFolder);
+library.add(faPhoneAlt, faBars, faArrowRight, faFolder);
 
 export default {
     name: 'Header',
