@@ -1,0 +1,195 @@
+@import "./_variables";
+@import "./_mixins.scss";
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+
+    .fa-phone-alt {
+        color: $primary_color;
+        margin-right: 0.5em;
+    }
+    
+    .header-top {
+        @include flex(row, $justify: space-between, $align: center, $gap: 0, $wrap: true);
+        padding: 1em 0;
+
+        img {
+            width: clamp(150px, 16vw, 300px);
+        }
+
+        nav {
+            @include flex(row, $justify: space-between, $align: center, $gap: 1em, $wrap: true);
+            font-size: 0.8em;
+
+            ul {
+                @include flex(row, $justify: center, $align: center, $gap: 1.4em, $wrap: false);
+    
+                li {
+                    padding: 5px 0;
+    
+                    &:first-child,
+                    &:hover {
+                        color: $primary_color;
+                        border-bottom: 3px solid $primary_color;
+                    }
+                }
+            }
+    
+            button {
+                @include button($color: $primary_color, $bg-color: $primary_color_light, $hover_color: rgb(255, 255, 255), $hover_bg_color: $primary_color);
+            }
+        }
+
+        @media screen and (max-width: 1000px) {
+            & {
+                @include flex(column, $justify: center, $align: center, $gap: 10px, $wrap: true);
+
+                nav {
+                    @include flex(row, $justify: center, $align: center, $gap: 15px, $wrap: true);
+                }
+            }
+        }
+    }
+
+    .jumbo {
+        position: relative;
+        background-image: url('../assets/img/marketing-intro.jpg');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+
+        .container {
+            @include flex(row, $justify: space-between, $align: none, $gap: 0, $wrap: false);
+            padding: 3em 0 15vw 0;
+
+            .jumbo-left {
+                width: 50%;
+                color: rgb(255, 255, 255);
+                padding-top: 1em;
+    
+                p {
+                    padding: 1.5em 0;
+                }
+    
+                button {
+                    @include button($color: initial, $bg-color: rgb(255, 255, 255), $hover_color: rgb(255, 255, 255), $hover_bg_color: transparent);
+                    border: 1px solid rgb(255, 255, 255);
+    
+                    .fa-arrow-right {
+                        margin-left: 0.5em;
+                    }
+                }
+            }
+
+            .container-card {
+                position: relative;
+                width: 35%;
+                
+                .card {
+                    position: absolute;
+                    top: 0;
+                    right: 10%;
+                    @include flex(column, $justify: center, $align: center, $gap: 10px, $wrap: false);
+                    width: 100%;
+                    padding: 20px;
+                    background-color: rgb(255, 255, 255);
+                    border-radius: 10px;
+                    box-shadow: 0 5px 10px rgb(210, 210, 210);
+    
+                    img {
+                        width: 25%;
+                        border-radius: 50%;
+                    }
+    
+                    .card-info {
+                        font-size: 0.85em;
+                        color: rgb(180, 180, 180);
+    
+                        &:last-child {
+                            font-size: 0.65em;
+                        }
+                    }
+    
+                    div {
+                        margin-bottom: 1em;
+    
+                        a {
+                            color: $primary_color;
+                        }
+                    }
+    
+                    input {
+                        width: 100%;
+                        color: rgb(230, 230, 230);
+                        margin-bottom: 1em;
+                        padding: 8px 5px;
+                        border: 1px solid rgb(230, 230, 230);
+                        border-radius: 7px;
+                    }
+    
+                    button {
+                        width: 100%;
+                        font-size: 1em;
+                        @include button($color: rgb(255, 255, 255), $bg-color: $primary_color, $hover_color: $primary_color, $hover_bg_color: $primary_color_light);
+                        margin-bottom: 0.3em;
+                    }
+                }
+            }
+
+            @media screen and (max-width: 768px) {
+                & {
+                    @include flex(column, $justify: center, $align: center, $gap: 30px, $wrap: false);
+                }
+
+                .jumbo-left {
+                    width: 100%;
+                }
+
+                .container-card {
+                    width: 60%;
+
+                    .card {
+                        right: 0;
+                    }
+                }
+            }
+        }
+
+        .container-widgets {
+            position: absolute;
+            top: 15px;
+            right: 5px;
+
+            .widget {
+                @include flex(column, $justify: center, $align: center, $gap: 0, $wrap: false);
+                width: 35px;
+                height: 35px;
+                font-size: 0.4em;
+                background-color: rgb(255, 255, 255);
+                margin-bottom: 5px;
+                border: 1px solid black;
+                border-radius: 5px;
+
+                .fa-folder {
+                    font-size: 3em;
+                }
+
+                .price {
+                    position: relative;
+                    font-size: 2.5em;
+                    color: green;
+
+                    span {
+                        position: absolute;
+                        top: 0px;
+                        left: -5px;
+                        font-size: 0.5em;
+                    }
+                }
+            }
+        }
+    }
+}
