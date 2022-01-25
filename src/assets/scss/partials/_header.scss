@@ -33,7 +33,7 @@
                     &:first-child,
                     &:hover {
                         color: $primary_color;
-                        border-bottom: 3px solid $primary_color;
+                        border-bottom: 2px solid $primary_color;
                         transform: translateY(-2px);
                     }
                 }
@@ -103,59 +103,20 @@
                 }
             }
         }
+
         // card
         .container-card {
             position: relative;
             width: 35%;
-            
+
             .card {
                 position: absolute;
                 top: 0;
                 right: 10%;
-                @include flex(column, $justify: center, $align: center, $gap: 10px, $wrap: false);
                 width: 100%;
-                background-color: rgb(255, 255, 255);
-                padding: 20px;
-                border-radius: 10px;
-                box-shadow: 0 5px 10px rgb(210, 210, 210);
-
-                img {
-                    width: 25%;
-                    border-radius: 50%;
-                }
-
-                .card-info {
-                    font-size: 0.85em;
-                    color: rgb(180, 180, 180);
-
-                    &:last-child {
-                        font-size: 0.6em;
-                    }
-                }
-
-                div {
-                    margin-bottom: 1em;
-
-                    a {
-                        color: $primary_color;
-                    }
-                }
-
-                input {
-                    width: 100%;
-                    color: rgb(230, 230, 230);
-                    margin-bottom: 1em;
-                    padding: 8px 5px;
-                    border: 1px solid rgb(230, 230, 230);
-                    border-radius: 7px;
-                }
-
-                button {
-                    width: 100%;
-                    @include button($color: rgb(255, 255, 255), $bg-color: $primary_color, $hover_color: $primary_color, $hover_bg_color: $primary_color_light);
-                }
             }
         }
+
         @media screen and (max-width: 768px) {
             & {
                 @include flex(column, $justify: center, $align: center, $gap: 30px, $wrap: false);

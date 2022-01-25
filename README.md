@@ -1,4 +1,4 @@
-# vue-marketing-consultant
+# proj-html-vuejs
 
 ## Project setup
 ```
