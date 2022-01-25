@@ -1,28 +1,24 @@
 @import "./_variables";
 @import "./_mixins.scss";
 
-header {
+// header top
+.header-top {
+    position: fixed;
+    top: 0;
+    left: 0;
     width: 100%;
+    background-color: rgb(255, 255, 255);
+    z-index: 999;
 
-    .fa-phone-alt {
-        color: $primary_color;
-        margin-right: 0.5em;
-    }
-    
-    .header-top {
-        position: fixed;
-        top: 0;
-        left: 10%;
+    .container {
         @include flex(row, $justify: space-between, $align: center, $gap: 0, $wrap: true);
-        background-color: inherit;
         padding: 1em 0;
-        z-index: 999;
-        margin: 0 auto;
 
         img {
             width: clamp(170px, 16vw, 300px);
         }
 
+        // navbar
         nav {
             @include flex(row, $justify: space-between, $align: center, $gap: 1em, $wrap: true);
             font-size: 0.8em;
@@ -32,7 +28,8 @@ header {
     
                 li {
                     padding: 5px 0;
-    
+                    transition: border 0.1s ease-in-out;
+                    
                     &:first-child,
                     &:hover {
                         color: $primary_color;
@@ -71,100 +68,95 @@ header {
             }
         }
     }
+}
 
-    .jumbo {
-        position: relative;
-        background-image: url('../assets/img/marketing-intro.jpg');
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
-        margin-top: 70px;
+// jumbo
+.jumbo {
+    position: relative;
+    background-image: url('../assets/img/marketing-intro.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin-top: 70px;
 
-        .container {
-            @include flex(row, $justify: space-between, $align: none, $gap: 0, $wrap: false);
-            padding: 3em 0 15vw 0;
+    .container {
+        @include flex(row, $justify: space-between, $align: none, $gap: 0, $wrap: false);
+        padding: 3em 0 15vw 0;
 
-            .jumbo-left {
-                width: 50%;
-                color: rgb(255, 255, 255);
-                padding-top: 1em;
-    
-                p {
-                    padding: 1.5em 0;
-                }
-    
-                button {
-                    @include button($color: initial, $bg-color: rgb(255, 255, 255), $hover_color: rgb(255, 255, 255), $hover_bg_color: transparent);
-                    border: 1px solid rgb(255, 255, 255);
-    
-                    .fa-arrow-right {
-                        margin-left: 0.5em;
-                    }
-                }
+        // jumbo-left
+        .jumbo-left {
+            width: 50%;
+            color: rgb(255, 255, 255);
+            padding-top: 1em;
+
+            p {
+                padding: 1.5em 0;
             }
 
-            .container-card {
-                position: relative;
-                width: 35%;
-                
-                .card {
-                    position: absolute;
-                    top: 0;
-                    right: 10%;
-                    @include flex(column, $justify: center, $align: center, $gap: 10px, $wrap: false);
-                    width: 100%;
-                    padding: 20px;
-                    background-color: rgb(255, 255, 255);
-                    border-radius: 10px;
-                    box-shadow: 0 5px 10px rgb(210, 210, 210);
-    
-                    img {
-                        width: 25%;
-                        border-radius: 50%;
-                    }
-    
-                    .card-info {
-                        font-size: 0.85em;
-                        color: rgb(180, 180, 180);
-    
-                        &:last-child {
-                            font-size: 0.65em;
-                        }
-                    }
-    
-                    div {
-                        margin-bottom: 1em;
-    
-                        a {
-                            color: $primary_color;
-                        }
-                    }
-    
-                    input {
-                        width: 100%;
-                        color: rgb(230, 230, 230);
-                        margin-bottom: 1em;
-                        padding: 8px 5px;
-                        border: 1px solid rgb(230, 230, 230);
-                        border-radius: 7px;
-                    }
-    
-                    button {
-                        width: 100%;
-                        font-size: 1em;
-                        @include button($color: rgb(255, 255, 255), $bg-color: $primary_color, $hover_color: $primary_color, $hover_bg_color: $primary_color_light);
-                        margin-bottom: 0.3em;
-                    }
+            button {
+                @include button($color: initial, $bg-color: rgb(255, 255, 255), $hover_color: rgb(255, 255, 255), $hover_bg_color: transparent);
+                border: 1px solid rgb(255, 255, 255);
+
+                .fa-arrow-right {
+                    margin-left: 0.5em;
                 }
             }
         }
+        // card
+        .container-card {
+            position: relative;
+            width: 35%;
+            
+            .card {
+                position: absolute;
+                top: 0;
+                right: 10%;
+                @include flex(column, $justify: center, $align: center, $gap: 10px, $wrap: false);
+                width: 100%;
+                background-color: rgb(255, 255, 255);
+                padding: 20px;
+                border-radius: 10px;
+                box-shadow: 0 5px 10px rgb(210, 210, 210);
 
+                img {
+                    width: 25%;
+                    border-radius: 50%;
+                }
+
+                .card-info {
+                    font-size: 0.85em;
+                    color: rgb(180, 180, 180);
+
+                    &:last-child {
+                        font-size: 0.6em;
+                    }
+                }
+
+                div {
+                    margin-bottom: 1em;
+
+                    a {
+                        color: $primary_color;
+                    }
+                }
+
+                input {
+                    width: 100%;
+                    color: rgb(230, 230, 230);
+                    margin-bottom: 1em;
+                    padding: 8px 5px;
+                    border: 1px solid rgb(230, 230, 230);
+                    border-radius: 7px;
+                }
+
+                button {
+                    width: 100%;
+                    @include button($color: rgb(255, 255, 255), $bg-color: $primary_color, $hover_color: $primary_color, $hover_bg_color: $primary_color_light);
+                }
+            }
+        }
         @media screen and (max-width: 768px) {
             & {
-                margin-bottom: 300px;
-            }
-
-            .container {
                 @include flex(column, $justify: center, $align: center, $gap: 30px, $wrap: false);
                 
                 .jumbo-left {
@@ -172,7 +164,8 @@ header {
                 }
     
                 .container-card {
-                    width: 60%;
+                    width: 70%;
+                    min-height: 300px;
     
                     .card {
                         right: 0;
@@ -180,39 +173,45 @@ header {
                 }
             }
         }
+    }
 
-        .container-widgets {
-            position: absolute;
-            top: 15px;
-            right: 5px;
+    // widgets
+    .container-widgets {
+        position: absolute;
+        top: 15px;
+        right: 5px;
 
-            .widget {
-                @include flex(column, $justify: center, $align: center, $gap: 0, $wrap: false);
-                width: 35px;
-                height: 35px;
-                font-size: 0.4em;
-                background-color: rgb(255, 255, 255);
-                margin-bottom: 5px;
-                border: 1px solid black;
-                border-radius: 5px;
+        .widget {
+            @include flex(column, $justify: center, $align: center, $gap: 0, $wrap: false);
+            width: 35px;
+            height: 35px;
+            font-size: 0.4em;
+            background-color: rgb(255, 255, 255);
+            margin-bottom: 5px;
+            border: 1px solid black;
+            border-radius: 5px;
 
-                .fa-folder {
-                    font-size: 3em;
-                }
+            .fa-folder {
+                font-size: 3em;
+            }
 
-                .price {
-                    position: relative;
-                    font-size: 2.5em;
-                    color: green;
+            .price {
+                position: relative;
+                font-size: 2.5em;
+                color: green;
 
-                    span {
-                        position: absolute;
-                        top: 0px;
-                        left: -5px;
-                        font-size: 0.5em;
-                    }
+                span {
+                    position: absolute;
+                    top: 0px;
+                    left: -5px;
+                    font-size: 0.5em;
                 }
             }
         }
     }
+}
+
+.fa-phone-alt {
+    color: $primary_color;
+    margin-right: 0.5em;
 }

@@ -1,27 +1,32 @@
 <template>
     <header>
-        <div class="container header-top">
-            <img src="../assets/img/avada-marketing-logo-2x-200x37.png" alt="AvadaConsultant logo">
-            <nav>
-                <ul>
-                    <li 
-                        v-for="(link, index) in links"
-                        :key="`A${index}`"
-                    >
-                        <a href="#">{{ link }}</a>
-                    </li>
-                </ul>
-                <div>
-                    <font-awesome-icon icon="phone-alt" />
-                    <a href="#">(555) 802-1234</a>
-                </div>
-                <button class="btn">Free Quotes</button>
-            </nav>
-            <font-awesome-icon icon="bars" />
+        <div class="header-top">
+            <div class="container">
+                <img src="../assets/img/avada-marketing-logo-2x-200x37.png" alt="AvadaConsultant logo">
+
+                <!-- navbar --> <!-- import Bootstrap--> 
+                <nav>
+                    <ul>
+                        <li 
+                            v-for="(link, index) in links"
+                            :key="`A${index}`"
+                        >
+                            <a href="#">{{ link }}</a>
+                        </li>
+                    </ul>
+                    <div>
+                        <font-awesome-icon icon="phone-alt" />
+                        <a href="#">(555) 802-1234</a>
+                    </div>
+                    <button class="btn">Free Quotes</button>
+                </nav>
+                <font-awesome-icon icon="bars" />
+            </div>
         </div>
 
         <div class="jumbo">
             <div class="container">
+                <!-- jumbo-left -->
                 <div class="jumbo-left">
                     <h1>Unlock Your Online Growth Potential</h1>
                     <p>Online marketing to secure customer retention, leads, and sales. We focus on the bigger picture</p>
@@ -30,6 +35,8 @@
                         <font-awesome-icon icon="arrow-right" />
                     </button>
                 </div>
+
+                <!-- card -->
                 <div class="container-card">
                     <div class="card">
                         <img src="../assets/img/marketing-consultant-expert.jpg" alt="img Expert jumbo">
@@ -44,12 +51,13 @@
                             <input type="text" placeholder="Your Email*">
                             <input type="text" placeholder="Your Phone Number*">
                             <button>Get a Callback</button>
-                            <span class="card-info">By submitting my data I agree to be contacted</span>
                         </form>
+                        <span class="card-info">By submitting my data I agree to be contacted</span>
                     </div>
                 </div>
             </div>
 
+            <!-- widgets -->
             <div class="container-widgets">
                 <div class="widget">
                     <font-awesome-icon icon="folder" />
