@@ -2,7 +2,7 @@
     <header>
         <div class="header-top">
             <div class="container">
-                <img src="../assets/img/avada-marketing-logo-2x-200x37.png" alt="AvadaConsultant logo">
+                <a href="#"><img src="../assets/img/avada-marketing-logo-2x-200x37.png" alt="AvadaConsultant logo"></a>
 
                 <!-- navbar --> <!-- import Bootstrap--> 
                 <nav>
@@ -73,16 +73,8 @@
 </template>
 
 <script>
-import { library } from '@fortawesome/fontawesome-svg-core';
-import { faPhoneAlt, faBars, faArrowRight, faFolder } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
-library.add(faPhoneAlt, faBars, faArrowRight, faFolder);
-
 export default {
     name: 'Header',
-    components: {
-        FontAwesomeIcon
-    },
     data() {
         return {
             links: [

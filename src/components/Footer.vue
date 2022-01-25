@@ -3,7 +3,12 @@
         <div class="container">
             <div class="col-left">
                 <p>Grow your online business strategically, and improve customer retention.</p>
-                <!-- <a href="#"><font-awesome-icon :icon="['fab', 'facebook-f']" /></a> -->
+                <a href="#">
+                    <font-awesome-icon 
+                        v-for="social in socials" 
+                        :key="social" 
+                        :icon="['fab', social]" />
+                </a>
             </div>
 
             <!-- lists -->
@@ -14,7 +19,7 @@
                         v-for="(link, index) in servicesLinks"
                         :key="`B${index}`"
                     >
-                        {{ link }}
+                        <a href="#">{{ link }}</a>
                     </li>
                 </ul>
             </div>
@@ -25,7 +30,7 @@
                         v-for="(link, index) in resourcesLinks"
                         :key="`C${index}`"
                     >
-                        {{ link }}
+                        <a href="#">{{ link }}</a>
                     </li>
                 </ul>
             </div>
@@ -36,15 +41,14 @@
                         v-for="(link, index) in companyLinks"
                         :key="`D${index}`"
                     >
-                        {{ link }}
+                        <a href="#">{{ link }}</a>
                     </li>
                 </ul>
             </div>
 
-
             <div class="col-bottom">
                 <span>2020 AvadaConsulting Powered by Wordpress</span>
-                <span>Call Us (555) 802-1234</span>
+                <a href="#">Call Us (555) 802-1234</a>
                 <span>info@yourcompany.com</span>
             </div>
         </div>
@@ -52,18 +56,20 @@
 </template>
 
 <script>
-// import { library } from '@fortawesome/fontawesome-svg-core';
-// import { faFacebookF } from '@fortawesome/free-solid-svg-icons';
-// import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
-// library.add(faFacebookF);
+
 
 export default {
     name: 'Footer',
-    components: {
-        // FontAwesomeIcon
-    },
     data() {
         return {
+            socials: [
+                'facebook-f',
+                'twitter',
+                'instagram',
+                'youtube',
+                'linkedin-in',
+                'tiktok'
+            ],
             servicesLinks: [
                 'Home',
                 'Services',
@@ -83,9 +89,6 @@ export default {
                 'Who We Are',
                 'Contact Us',
                 'Careers'
-            ],
-            social: [
-
             ]
         }
     }
