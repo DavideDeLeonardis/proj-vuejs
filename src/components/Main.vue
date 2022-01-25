@@ -6,7 +6,7 @@
 
                 <div class="feature">
                     <span>
-                        <font-awesome-icon :icon="['fab', 'bandcamp']" />Business Growth
+                        <font-awesome-icon :icon="['fab', 'bandcamp']" />Business growth
                     </span>
                     <h2>Increase brand awarness</h2>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit quaerat, aliquam a 
@@ -18,7 +18,7 @@
             <section class="container-intro order-intro">
                 <div class="feature">
                     <span>
-                        <font-awesome-icon :icon="['fab', 'squarespace']" />Business Growth
+                        <font-awesome-icon :icon="['fab', 'squarespace']" />Investors in people
                     </span>
                     <h2>In-House sales training</h2>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit quaerat, aliquam a 
@@ -34,7 +34,7 @@
 
                 <div class="feature">
                     <span>
-                        <font-awesome-icon :icon="['fas', 'users']" />Business Growth
+                        <font-awesome-icon :icon="['fas', 'users']" />Social media analysis
                     </span>
                     <h2>Harness your social proof</h2>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit quaerat, aliquam a 
@@ -43,20 +43,49 @@
                 </div>
             </section>
 
-            <!-- collaboration brands -->
+            <!-- brands -->
             <section class="brands">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto qui eius quaerat et accusamus ea, nemo consequatur quisquam! Delectus amet adipisci possimus voluptatem esse facere doloribus perferendis, consectetur ad sint?
+                <h2>Some brands we work with</h2>
+                <span class="subheading">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non, sapiente.</span>
+
+                <div class="container-brands">
+                    <img 
+                        v-for="(brand, index) in brands" 
+                        :key="index" 
+                        :src="brand.img" 
+                        :alt="brand.alt"
+                    >
+                </div>
+
+                <div class="contact">
+                    <div class="profile">
+                        <img src="../assets/img/marketing-expert-cta.png" alt="img marketing expert">
+                        <div>
+                            <span>Sandy Reiff</span><br>
+                            <span>Marketing Consulent Extra</span>
+                        </div>
+                    </div>
+                    <span>Drive Leads and Sales with Avada</span>
+                    <button>
+                        <font-awesome-icon icon="phone-alt" />
+                        <a href="#">(555) 802-1234</a>
+                    </button>
+                </div>
             </section>
 
             <!-- case studies -->
-            <section class="trust"></section>
+            <section class="trust">
+                Trust
+            </section>
         </div>
 
         <!-- characteristics -->
         <div class="bg-gray">
             <section class="container">
-                <div class="top"></div>
+                <div class="container-intro"></div>
+
                 <div class="middle"></div>
+
                 <div class="awards"></div>
             </section>
         </div>
@@ -78,7 +107,37 @@
 
 <script>
 export default {
-    name: 'Main'
+    name: 'Main',
+    data() {
+        return {
+            brands: [
+                {
+                    "img": require('../assets/img/abstract.png'),
+                    "alt": "logo Abstract"
+                },
+                {
+                    "img": require('../assets/img/cglobal.png'),
+                    "alt": "logo CGlobal"
+                },
+                {
+                    "img": require('../assets/img/next.png'),
+                    "alt": "logo Next"
+                },
+                {
+                    "img": require('../assets/img/hemisferio.png'),
+                    "alt": "logo Hemisferio"
+                },
+                {
+                    "img": require('../assets/img/spaces.png'),
+                    "alt": "logo Spaces"
+                },
+                {
+                    "img": require('../assets/img/digitalbox.png'),
+                    "alt": "logo Digitalbox"
+                }
+            ]
+        }
+    }
 }
 </script>
 

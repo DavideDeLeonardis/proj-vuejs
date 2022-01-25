@@ -7,22 +7,22 @@ main {
     padding: 5em 0;
 
     .container-intro {
-        @include flex(row, $justify: space-between, $align: center, $gap: 0, $wrap: false);
+        @include flex(row, $justify: space-around, $align: center, $gap: 15%, $wrap: false);
         margin-bottom: 6em;
 
         img {
-            width: 45%;
+            width: 35%;
             min-width: 280px;
             max-width: 400px;
         }
         
         .feature {
             width: 37.5%;
-            padding-right: 1em;
 
             span {
                 @include flex(row, $justify: flex-start, $align: center, $gap: 5px, $wrap: false);
                 font-size: 0.7em;
+                text-transform: capitalize;
 
                 & > * {
                     font-size: 1.5em;
@@ -33,7 +33,7 @@ main {
                 }
 
                 .fa-squarespace {
-                    color: yellow;
+                    color: rgb(255, 224, 47);
                 }
 
                 .fa-users {
@@ -47,7 +47,8 @@ main {
             }
     
             p {
-                color: gray;
+                font-size: 0.8em;
+                color: rgb(128, 128, 128);
                 margin: 1em 0 1.5em 0;
             }
     
@@ -76,4 +77,81 @@ main {
             }
         }
     }
+
+    .brands {
+        text-align: center;
+        margin-bottom: 4.5em;
+
+        h2 {
+            margin-bottom: 5px;
+        }
+
+        .subheading {
+            font-size: 0.8em;
+            color: rgb(141, 141, 141);
+        }
+
+        .container-brands {
+            @include flex(row, $justify: center, $align: center, $gap: 10%, $wrap: true);
+            margin: 1em 0 3em 0;
+
+            img {
+                width: 70px;
+                padding: 0.5em 0;
+            }
+        }
+
+        .contact {
+            @include flex(row, $justify: center, $align: center, $gap: 13%, $wrap: true);
+            border-radius: 7px;
+            box-shadow: 0 10px 15px rgb(230, 229, 229);
+
+            & > * {
+                margin: 0.5em 0;
+            }
+
+            .profile {
+                @include flex(row, $justify: center, $align: center, $gap: 0, $wrap: false);
+                text-align: left;
+                
+                img {
+                    width: 30px;
+                    margin-right: 1em;
+                    border-radius: 50%;
+                }
+
+                div {
+                    font-size: 0.8em;
+
+                    span:last-child {
+                        font-size: 0.8em;
+                        color: rgb(141, 141, 141);
+                    }
+                }
+            }
+
+            button {
+                @include button($color: $primary_color, $bg-color: $primary_color_light, $hover_color: rgb(255, 255, 255), $hover_bg_color: $primary_color);
+
+                &:hover .fa-phone-alt {
+                    color: rgb(255, 255, 255);
+                }
+            }
+        }
+    }
+
+    .trust {
+        text-align: center;
+    }
+
+
+
+
+
+
+
+
+
+
+    
 }
