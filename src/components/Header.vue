@@ -32,7 +32,7 @@
                     <p>Online marketing to secure customer retention, leads, and sales. We focus on the bigger picture</p>
                     <button>
                         Our Services
-                        <font-awesome-icon icon="arrow-right" />
+                        <font-awesome-icon :icon="['fas', 'arrow-right']" />
                     </button>
                 </div>
 
@@ -43,7 +43,7 @@
                         <span>Richard Madsen</span>
                         <span class="card-info">Marketing Consultant Expert</span>
                         <div>
-                            <font-awesome-icon icon="phone-alt" />
+                            <font-awesome-icon :icon="['fas', 'phone-alt']" />
                             <a href="#">(555) 802-1234</a>
                         </div>
                         <form>
@@ -60,7 +60,7 @@
             <!-- widgets -->
             <div class="container-widgets">
                 <div class="widget">
-                    <font-awesome-icon icon="folder" />
+                    <font-awesome-icon :icon="['fas', 'folder']" />
                     <span>Demos</span>
                 </div>
                 <div class="widget">
