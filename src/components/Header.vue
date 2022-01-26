@@ -4,7 +4,7 @@
             <div class="container">
                 <a href="#"><img src="../assets/img/avada-marketing-logo-2x-200x37.png" alt="AvadaConsultant logo"></a>
 
-                <!-- navbar --> <!-- import Bootstrap--> 
+                <!-- navbar -->
                 <nav>
                     <ul>
                         <li 
@@ -18,7 +18,7 @@
                         <font-awesome-icon icon="phone-alt" />
                         <a href="#">(555) 802-1234</a>
                     </div>
-                    <button class="btn">Free Quotes</button>
+                    <button>Free Quotes</button>
                 </nav>
                 <font-awesome-icon icon="bars" />
             </div>

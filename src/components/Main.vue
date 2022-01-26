@@ -75,14 +75,44 @@
 
             <!-- case studies -->
             <section class="trust">
-                Trust
+                <h2>Trusted by Leading Organization</h2>
+                <div class="container-cases">
+                    <div class="case">
+                        <img src="../assets/img/case-studies-1-400x450.jpg" alt="img case study">
+                        <p>How Spaces attracted five million visitors by improving the content</p>
+                        <div>200%</div>
+                        <span>Higher revenue from digital</span>
+                    </div>
+                    <div class="case">
+                        <img src="../assets/img/case-studies-4-400x450.jpg" alt="img case study">
+                        <p>Creativity helped Hemisferio increase their brand reach vertically</p>
+                        <div>10x</div>
+                        <span>Sales increase with the same ad spend</span>
+                    </div>
+                    <div class="case">
+                        <img src="../assets/img/case-studies-6-400x450.jpg" alt="img case study">
+                        <p>How DigitalBox used AI- powered data insight to boost sales</p>
+                        <div>3-year</div>
+                        <span>Partnership with Avada Consultant</span>
+                    </div>
+                </div>
+                <button>Read more case studies</button>
             </section>
         </div>
 
         <!-- characteristics -->
         <div class="bg-gray">
             <section class="container">
-                <div class="container-intro"></div>
+                <div class="container-intro">
+                    <div class="feature">
+                        <h2>We boost our clients' bottom line by optimizing their growth potential</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit quaerat, aliquam a 
+                            architecto aspernatur dolores enim maiores ipsa natus.</p>
+                        <button>Why work with us</button>
+                    </div>
+                
+                    <img src="../assets/img/we-boost-our-clients-400x366.jpg" alt="img intro main">
+                </div>
 
                 <div class="middle"></div>
 
