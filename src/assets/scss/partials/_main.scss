@@ -1,87 +1,105 @@
 @import "./_variables";
 @import "./_mixins.scss";
 
-main {
-    padding: 5em 0;
+// commons
+.container-intro {
+    @include flex(row, $justify: space-between, $align: center, $gap: 0, $wrap: false);
 
-    .container-intro {
-        @include flex(row, $justify: space-around, $align: center, $gap: 15%, $wrap: false);
-        margin-bottom: 6em;
-
-        img {
-            width: 35%;
-            min-width: 280px;
-            max-width: 400px;
-        }
-        
-        .feature {
-            width: 37.5%;
-
-            span {
-                @include flex(row, $justify: flex-start, $align: center, $gap: 5px, $wrap: false);
-                font-size: 0.7em;
-                text-transform: capitalize;
-
-                & > * {
-                    font-size: 1.5em;
-                }
-
-                .fa-bandcamp {
-                    color: rgb(0, 0, 255);
-                }
-
-                .fa-squarespace {
-                    color: rgb(255, 224, 47);
-                }
-
-                .fa-users {
-                    color: rgb(0, 218, 0);
-                }                
-            }
-
-            h2 {
-                text-transform: capitalize;
-                margin-top: 0.5em;
-            }
+    img {
+        width: 40%;
+        min-width: 280px;
+        max-width: 400px;
+    }
     
-            p {
-                font-size: 0.8em;
-                color: rgb(128, 128, 128);
-                margin: 1em 0 1.5em 0;
-            }
-    
-            button {
-                @include button($color: rgb(255, 255, 255), $bg-color: $primary_color, $hover_color: $primary_color, $hover_bg_color: $primary_color_light);
-            }
+    .feature {
+        width: 35%;
+
+        span {
+            @include flex(row, $justify: flex-start, $align: center, $gap: 5px, $wrap: false);
+            font-size: 0.7em;
+            text-transform: capitalize;
+
+            & > * { font-size: 1.5em; }
+
+            .fa-bandcamp { color: rgb(0, 0, 255); }
+
+            .fa-squarespace { color: rgb(255, 224, 47); }
+
+            .fa-users { color: rgb(0, 218, 0); }                
         }
 
-        @media screen and (max-width: 650px) {
-            & {
-                @include flex(column, $justify: center, $align: center, $gap: 0, $wrap: false);
-                margin-bottom: 4em;
+        h2 {
+            text-transform: capitalize;
+            margin-top: 0.5em;
+        }
 
-                img {
-                    width: 100%;
-                }
+        p {
+            font-size: 0.8em;
+            color: rgb(128, 128, 128);
+            margin: 1em 0 1.5em 0;
+        }
 
-                .feature {
-                    width: 90%;
-                    margin-top: 1.5em;
-                }
+        button { @include button($color: rgb(255, 255, 255), $bg-color: $primary_color, $hover_color: $primary_color, $hover_bg_color: $primary_color_light); }
+    }
 
-                &.order-intro {
-                    flex-direction: column-reverse;
-                }
+    @media screen and (max-width: 768px) {
+        & {
+            @include flex(column, $justify: center, $align: center, $gap: 0, $wrap: false);
+            margin-bottom: 4em;
+
+            img { width: 100%; }
+
+            .feature {
+                width: 90%;
+                margin-top: 1.5em;
             }
+
+            &.order-intro { flex-direction: column-reverse; }
         }
     }
+}
+
+.container-cases {
+    @include flex(row, $justify: space-between, $align: flex-start, $gap: 0, $wrap: false);
+    text-align: left;
+
+    .case {
+        width: calc((100% / 3) - 3%);
+        
+        img { width: 100%; }
+        
+        p { padding: 0.5em 0; }
+
+        div {
+            font-size: 1.5em;
+            font-weight: 600;
+            padding-top: 0.5em;
+        }
+
+        span {
+            font-size: 0.7em;
+            color: rgb(141, 141, 141);
+        }
+    }
+
+    @media screen and (max-width: 576px) {
+        @include flex(column, $justify: center, $align: center, $gap: 3em, $wrap: false);
+
+        .case { width: 80%; }
+    }
+}
+// /commons
+
+
+main {
+    padding-top: 5em;
+
+    .intro { margin-bottom: 6em; }
 
     .brands {
         text-align: center;
 
-        h2 {
-            margin-bottom: 5px;
-        }
+        h2 { margin-bottom: 5px; }
 
         .subheading {
             font-size: 0.8em;
@@ -100,12 +118,11 @@ main {
 
         .contact {
             @include flex(row, $justify: space-between, $align: center, $gap: 10px, $wrap: true);
-            border-radius: 7px;padding: 0 1.5em;
+            padding: 0 1.5em;
+            border-radius: 7px;
             box-shadow: 0 10px 15px rgb(230, 229, 229);
 
-            & > * {
-                margin: 0.5em 0;
-            }
+            & > * { margin: 0.5em 0; }
 
             .profile {
                 @include flex(row, $justify: center, $align: center, $gap: 0, $wrap: false);
@@ -130,95 +147,200 @@ main {
             button {
                 @include button($color: $primary_color, $bg-color: $primary_color_light, $hover_color: rgb(255, 255, 255), $hover_bg_color: $primary_color);
 
-                &:hover .fa-phone-alt {
-                    color: rgb(255, 255, 255);
-                }
+                &:hover .fa-phone-alt { color: rgb(255, 255, 255); }
             }
 
             @media screen and (max-width: 870px) {
-                & {
-                    @include flex(column, $justify: center, $align: center, $gap: 0, $wrap: true);
-                }
+                & { @include flex(column, $justify: center, $align: center, $gap: 0, $wrap: true); }
             }
         }
     }
 
     .trust {
         text-align: center;
-        margin: 4.5em 0;
+        padding: 4.5em 0;
 
         .container-cases {
-            @include flex(row, $justify: space-between, $align: flex-start, $gap: 0, $wrap: false);
-            text-align: left;
             margin: 2em 0;
 
-            .case {
-                width: calc((100% / 3) - 3%);
-                
-                img {
-                    width: 100%;
-                }
-                
-                p {
-                    padding: 0.5em 0;
-                    border-bottom: 1px solid rgb(240, 240, 240);
-                }
+            p { border-bottom: 1px solid rgb(240, 240, 240); }
+    
+        }
+        
+        button { @include button($color: white, $bg-color: $primary_color, $hover_color: $primary_color, $hover_bg_color: $primary_color_light); }
+    }
 
-                div {
-                    font-size: 1.2em;
-                    font-weight: 600;
-                    padding-top: 0.5em;
+    .characteristics,
+    .quote {
+        padding: 4.5em 5%;
+    }
+
+    .characteristics .container-intro,
+    .quote .container-intro {
+        img { width: 50%; }
+    }
+
+    .middle {
+        @include flex(row, $justify: center, $align: center, $gap: 20%, $wrap: false);
+        margin: 3em 0 4em 0;
+
+        .col {
+            width: 40%;
+
+            h4 { margin: 1.5em 0 0.5em 0; }
+
+            p {
+                font-size: 0.7em;
+                color: rgb(141, 141, 141);
+            }
+
+            .col-left {
+                @include flex(row, $justify: flex-start, $align: center, $gap: 0, $wrap: false);
+
+                & > *:not(div) {
+                    font-size: 2.5em;
+                    color: $primary_color;
+                    padding: 7px;
+                    border: 1px solid $primary_color;
+                    border-radius: 7px;
                 }
+                .content-middle * { margin: 10px; }
+            }
+        }
+
+        @media screen and (max-width: 576px) {
+            @include flex(column, $justify: center, $align: center, $gap: 0, $wrap: false);
+
+            .col {
+                width: 100%;
+                text-align: center;
+
+                .col-left {
+                    @include flex(row, $justify: center, $align: center, $gap: 0, $wrap: false);
+                    margin-top: 1em;
+
+                }
+            }
+        }
+    }
+
+    .awards {
+        text-align: center;
+
+        .container-awards {
+            @include flex(row, $justify: space-between, $align: flex-start, $gap: 10%, $wrap: false);
+            margin-top: 2em;
+
+            .award {
+                @include flex(column, $justify: space-between, $align: center, $gap: 0, $wrap: true);
+                width: 25%;
+
+                img { width: 60%; }
 
                 span {
                     font-size: 0.7em;
                     color: rgb(141, 141, 141);
                 }
+
             }
 
             @media screen and (max-width: 576px) {
-                @include flex(column, $justify: center, $align: center, $gap: 2%, $wrap: false);
+                & {
+                    @include flex(row, $justify: center, $align: center, $gap: 0, $wrap: true);
 
-                .case {
-                    width: 80%;
-                    margin-bottom: 1.5em;
+                    .award {
+                        width: 50%;
+
+                        img { width: 40%; }
+                    }
+                }
+            }
+        }
+    }
+
+    .quote .feature span,
+    .form-left span {
+        display: inline-block;
+        font-size: 0.7em;
+
+        &:last-child {
+            font-size: 0.6em;
+            color: rgb(141, 141, 141);
+        }
+    }
+
+    .resources {
+        padding-top: 5em;
+
+        .resources-top {
+            @include flex(row, $justify: space-between, $align: flex-end, $gap: 10%, $wrap: false);
+
+            h2 { width: 40% }
+
+            button { @include button($color: white, $bg-color: $primary_color, $hover_color: $primary_color, $hover_bg_color: $primary_color_light); }
+
+            @media screen and (max-width: 576px) {
+                @include flex(column, $justify: center, $align: center, $gap: 1em, $wrap: false);
+
+                h2 {
+                    text-align: center;
+                    width: 100%;
                 }
             }
         }
 
-        button {
-            @include button($color: white, $bg-color: $primary_color, $hover_color: $primary_color, $hover_bg_color: $primary_color_light);
+        .container-cases {
+            padding: 3em 0;
+
+            p { text-transform: capitalize; }
         }
     }
 
-    .bg-gray {
-        padding: 3em 0;
-
-        .container-intro {
-            @include flex(row, $justify: space-around, $align: center, $gap: 5%, $wrap: false);
-
-            img {
-                width: 40%;
-            }
-
-            button {
-                text-transform: capitalize;
-            }
-        }
-
+    .form {
+        color: rgb(255, 255, 255);
+        background-color: rgb(0, 0, 0);
+        padding: 4.5em 0;
         
+        .container {
+            @include flex(row, $justify: space-between, $align: center, $gap: 0, $wrap: false);
+
+            .form-left {
+                width: 50%;
+
+                h1 {
+                    font-size: 2em;
+                    text-transform: capitalize;
+                }
+
+                p {
+                    margin: 1em 0;
+                }
+
+                hr {
+                    width: 25%;
+                }
+
+                blockquote {
+                    font-size: 0.9em;
+                    font-style: italic;
+                    margin: 1em 0;
+                }
+            }
+
+            .card {
+                width: 35%;
+            }
+
+            @media screen and (max-width: 768px) {
+                & {
+                    @include flex(column, $justify: center, $align: center, $gap: 2em, $wrap: true);
+                    
+                    .form-left,
+                    .card {
+                        width: 100%;
+                    }
+                }
+            }
+        }
     }
-
-
-
-
-
-
-
-
-
-
-
-
-    
 }

@@ -119,7 +119,7 @@
 
         @media screen and (max-width: 768px) {
             & {
-                @include flex(column, $justify: center, $align: center, $gap: 30px, $wrap: false);
+                @include flex(column, $justify: center, $align: center, $gap: 2em, $wrap: false);
                 
                 .jumbo-left {
                     width: 100%;
