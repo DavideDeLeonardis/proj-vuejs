@@ -79,19 +79,25 @@
                 <h2>Trusted by Leading Organization</h2>
                 <div class="container-cases">
                     <div class="case">
-                        <img src="../assets/img/case-studies-1-400x450.jpg" alt="img case study">
+                        <div class="img-color">
+                            <img src="../assets/img/case-studies-1-400x450.jpg" alt="img case study">
+                        </div>
                         <p>How Spaces attracted five million visitors by improving the content</p>
                         <div>200%</div>
                         <span>Higher revenue from digital</span>
                     </div>
                     <div class="case">
-                        <img src="../assets/img/case-studies-4-400x450.jpg" alt="img case study">
+                        <div class="img-color">
+                            <img src="../assets/img/case-studies-4-400x450.jpg" alt="img case study">
+                        </div>
                         <p>Creativity helped Hemisferio increase their brand reach vertically</p>
                         <div>10x</div>
                         <span>Sales increase with the same ad spend</span>
                     </div>
                     <div class="case">
-                        <img src="../assets/img/case-studies-6-400x450.jpg" alt="img case study">
+                        <div class="img-color">
+                            <img src="../assets/img/case-studies-6-400x450.jpg" alt="img case study">
+                        </div>
                         <p>How DigitalBox used AI- powered data insight to boost sales</p>
                         <div>3-year</div>
                         <span>Partnership with Avada Consultant</span>
@@ -187,15 +193,21 @@
 
                 <div class="container-cases">
                     <div class="case">
-                        <img src="../assets/img/blog-posts-6-200x133.jpg" alt="img resource">
+                        <div class="img-color">
+                            <img src="../assets/img/blog-posts-6-200x133.jpg" alt="img resource">
+                        </div>
                         <p>Marketing tips nad tricks for your website</p>
                     </div>
                     <div class="case">
-                        <img src="../assets/img/blog-posts-5-200x133.jpg" alt="img resource">
+                        <div class="img-color">
+                            <img src="../assets/img/blog-posts-5-200x133.jpg" alt="img resource">
+                        </div>
                         <p>How to write stunning blog post titles</p>
                     </div>
                     <div class="case">
-                        <img src="../assets/img/blog-posts-4-200x133.jpg" alt="img resource">
+                        <div class="img-color">
+                            <img src="../assets/img/blog-posts-4-200x133.jpg" alt="img resource">
+                        </div>
                         <p>Techniques to reduce facebook ads spend</p>
                     </div>
                 </div>

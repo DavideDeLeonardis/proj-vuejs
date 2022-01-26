@@ -17,9 +17,7 @@ body {
     margin: 0 auto;
 }
 
-ul {
-    list-style-type: none;
-}
+ul { list-style-type: none; }
 
 a {
     text-decoration: none;
@@ -36,7 +34,6 @@ a {
     background-color: rgb(255, 255, 255);
     padding: 20px;
     border-radius: 10px;
-    box-shadow: 0 5px 10px rgb(210, 210, 210);
 
     img {
         width: 25%;
@@ -47,17 +44,13 @@ a {
         font-size: 0.85em;
         color: rgb(180, 180, 180);
 
-        &:last-child {
-            font-size: 0.6em;
-        }
+        &:last-child { font-size: 0.6em; }
     }
 
     div {
         margin-bottom: 1em;
 
-        a {
-            color: $primary_color;
-        }
+        a { color: $primary_color; }
     }
 
     input {
@@ -67,9 +60,7 @@ a {
         border: 1px solid rgb(230, 230, 230);
         border-radius: 7px;
 
-        &::placeholder {
-            color: rgb(190, 190, 190);
-        }
+        &::placeholder { color: rgb(190, 190, 190); }
     }
 
     button {
@@ -78,6 +69,4 @@ a {
     }
 }
 
-.bg-gray {
-    background: linear-gradient(0deg, rgb(250, 250, 250) 5%, rgb(240, 240, 240) 90%);;
-}
+.bg-gray { background: linear-gradient(0deg, rgb(250, 250, 250) 5%, rgb(240, 240, 240) 90%); }

@@ -23,9 +23,7 @@ footer {
                 margin-right: 2vw;
                 transition: 0.15s;
 
-                &:hover {
-                    transform: scale(1.25);
-                }
+                &:hover { transform: scale(1.25); }
             }
         }
     
@@ -35,16 +33,12 @@ footer {
             margin-bottom: 3em;
             padding-left: 3em;
 
-            * {
-                margin-bottom: 10px;
-            }
+            * { margin-bottom: 10px; }
 
             li {
                 color: rgb(100, 100, 100);
 
-                &:hover {
-                    text-decoration: underline;
-                }
+                &:hover { text-decoration: underline; }
             }
         }
 
@@ -59,18 +53,12 @@ footer {
             .col-left {
                 width: 100%;
 
-                a > * {
-                    margin-right: 1em;
-                }
+                a > * { margin-right: 1em; }
             }
 
-            .col-right {
-                padding: 0;
-            }
+            .col-right { padding: 0; }
 
-            .col-bottom {
-                @include flex(row, $justify: center, $align: center, $gap: 20px, $wrap: true);
-            }
+            .col-bottom { @include flex(row, $justify: center, $align: center, $gap: 20px, $wrap: true); }
         }
     }
 }

@@ -14,9 +14,7 @@
         @include flex(row, $justify: space-between, $align: center, $gap: 0, $wrap: true);
         padding: 1em 0;
 
-        img {
-            width: clamp(170px, 16vw, 300px);
-        }
+        img { width: clamp(170px, 16vw, 300px); }
 
         // navbar
         nav {
@@ -39,9 +37,7 @@
                 }
             }
     
-            button {
-                @include button($color: $primary_color, $bg-color: $primary_color_light, $hover_color: rgb(255, 255, 255), $hover_bg_color: $primary_color);
-            }
+            button { @include button($color: $primary_color, $bg-color: $primary_color_light, $hover_color: rgb(255, 255, 255), $hover_bg_color: $primary_color); }
         }
 
         .fa-bars {
@@ -50,23 +46,15 @@
             transition: 0.2s;
             cursor: pointer;
 
-            &:hover {
-                transform: scale(1.2);
-            }
+            &:hover { transform: scale(1.2); }
         }
 
         @media screen and (max-width: 1040px) {
-            img {
-                transform: translateY(2px);
-            }
+            img { transform: translateY(2px); }
         
-            nav {
-                display: none;
-            }
+            nav { display: none; }
 
-            .fa-bars {
-                display: block;
-            }
+            .fa-bars { display: block; }
         }
     }
 }
@@ -90,17 +78,13 @@
             color: rgb(255, 255, 255);
             padding-top: 1em;
 
-            p {
-                padding: 1.5em 0;
-            }
+            p { padding: 1.5em 0; }
 
             button {
                 @include button($color: initial, $bg-color: rgb(255, 255, 255), $hover_color: rgb(255, 255, 255), $hover_bg_color: transparent);
                 border: 1px solid rgb(255, 255, 255);
 
-                .fa-arrow-right {
-                    margin-left: 0.5em;
-                }
+                .fa-arrow-right { margin-left: 0.5em; }
             }
         }
 
@@ -114,6 +98,7 @@
                 top: 0;
                 right: 10%;
                 width: 100%;
+                box-shadow: 0 5px 10px rgb(210, 210, 210);
             }
         }
 
@@ -121,9 +106,7 @@
             & {
                 @include flex(column, $justify: center, $align: center, $gap: 2em, $wrap: false);
                 
-                .jumbo-left {
-                    width: 100%;
-                }
+                .jumbo-left { width: 100%; }
     
                 .container-card {
                     width: 70%;
@@ -131,6 +114,7 @@
     
                     .card {
                         right: 0;
+                        min-width: 250px;
                     }
                 }
             }
@@ -153,9 +137,7 @@
             border: 1px solid black;
             border-radius: 5px;
 
-            .fa-folder {
-                font-size: 3em;
-            }
+            .fa-folder { font-size: 3em; }
 
             .price {
                 position: relative;
