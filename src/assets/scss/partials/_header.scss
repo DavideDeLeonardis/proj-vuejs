@@ -19,6 +19,10 @@
         .navbar-toggler {
             border: none;
             cursor: pointer;
+
+            &:focus {
+                box-shadow: none;
+            }
             
             .navbar-toggler-icon:hover {
                 transition: 0.2s;
