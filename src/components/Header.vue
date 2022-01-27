@@ -1,27 +1,34 @@
 <template>
     <header>
         <div class="header-top">
-            <div class="container">
-                <a href="#"><img src="../assets/img/avada-marketing-logo-2x-200x37.png" alt="AvadaConsultant logo"></a>
-
-                <!-- navbar -->
-                <nav>
-                    <ul>
-                        <li 
-                            v-for="(link, index) in links"
-                            :key="`A${index}`"
-                        >
-                            <a href="#">{{ link }}</a>
-                        </li>
-                    </ul>
-                    <div>
-                        <font-awesome-icon icon="phone-alt" />
-                        <a href="#">(555) 802-1234</a>
+            <!-- navbar -->
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <div class="container">
+                    <a class="navbar-brand" href="#">
+                        <img src="../assets/img/avada-marketing-logo-2x-200x37.png" alt="AvadaConsultant logo"></a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav me-auto">
+                            <li 
+                                v-for="(link, index) in links"
+                                :key="`A${index}`"
+                                class="nav-item"
+                            >
+                                <a class="nav-link active" aria-current="page" href="#">{{ link }}</a>
+                            </li>
+                        </ul>
+                        <div class="container-number">
+                            <font-awesome-icon icon="phone-alt" />
+                            <a class="number" href="#">(555) 802-1234</a>
+                        </div>
+                        <form class="d-flex">
+                            <button type="submit">Free Quotes</button>
+                        </form>
                     </div>
-                    <button>Free Quotes</button>
-                </nav>
-                <font-awesome-icon icon="bars" />
-            </div>
+                </div>
+            </nav>
         </div>
 
         <div class="jumbo">
@@ -83,7 +90,8 @@ export default {
                 'Why Us',
                 'Case Studies',
                 'About',
-                'Blog'
+                // 'Blog' 
+                    // cambiare media querie navbar
             ]
         }
     }
@@ -91,5 +99,5 @@ export default {
 </script>
 
 <style scoped lang="scss">
-@import "../assets/scss/partials/_header.scss";
+@import "../assets/scss/partials/header";
 </style>

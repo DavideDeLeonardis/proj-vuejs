@@ -1,0 +1,17 @@
+// Bootstrap required
+@import "~bootstrap/scss/functions";
+@import "~bootstrap/scss/variables";
+@import "~bootstrap/scss/mixins";
+@import "~bootstrap/scss/root";
+@import "~bootstrap/scss/utilities";
+@import "~bootstrap/scss/helpers";
+
+// Navbar
+@import "~bootstrap/scss/nav";
+@import "~bootstrap/scss/navbar";
+@import "~bootstrap/scss/dropdown";
+@import "~bootstrap/scss/transitions";
+
+// style
+@import "./assets/scss/partials/commons";
+@import "./assets/scss/partials/app";

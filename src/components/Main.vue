@@ -307,5 +307,5 @@ export default {
 </script>
 
 <style scoped lang="scss">
-@import "../assets/scss/partials/_main.scss";
+@import "../assets/scss/partials/main";
 </style>
