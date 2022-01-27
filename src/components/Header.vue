@@ -21,7 +21,7 @@
                         </ul>
                         <div class="container-number">
                             <font-awesome-icon icon="phone-alt" />
-                            <a class="number" href="#">(555) 802-1234</a>
+                            <a class="number" href="#">{{ phoneNumber }}</a>
                         </div>
                         <form class="d-flex">
                             <button type="submit">Free Quotes</button>
@@ -51,7 +51,7 @@
                         <span class="card-info">Marketing Consultant Expert</span>
                         <div>
                             <font-awesome-icon :icon="['fas', 'phone-alt']" />
-                            <a href="#">(555) 802-1234</a>
+                            <a href="#">{{ phoneNumber }}</a>
                         </div>
                         <form>
                             <input type="text" placeholder="Your Name*">
@@ -82,6 +82,11 @@
 <script>
 export default {
     name: 'Header',
+    props: {
+        phoneNumber: {
+            type: String
+        }
+    },
     data() {
         return {
             links: [
@@ -89,9 +94,7 @@ export default {
                 'Services',
                 'Why Us',
                 'Case Studies',
-                'About',
-                // 'Blog' 
-                    // cambiare media querie navbar
+                'About'
             ]
         }
     }

@@ -4,6 +4,7 @@
 // commons
 .container-intro {
     @include flex(row, $justify: space-between, $align: center, $gap: 0, $wrap: false);
+    margin-bottom: 6em;
 
     img {
         width: 50%;
@@ -42,10 +43,14 @@
         button { @include button($color: rgb(255, 255, 255), $bg-color: $primary_color, $hover_color: $primary_color, $hover_bg_color: $primary_color_light); }
     }
 
+    &:nth-child(2) {
+        @include flex(row-reverse, $justify: space-between, $align: flex-start, $gap: 0, $wrap: false);
+    }
+
     @media screen and (max-width: 768px) {
-        & {
+        &, 
+        &:nth-child(2) {
             @include flex(column, $justify: center, $align: center, $gap: 0, $wrap: false);
-            margin-bottom: 4em;
 
             img { width: 100%; }
 
@@ -110,8 +115,6 @@
 
 main {
     padding-top: 5em;
-
-    .intro { margin-bottom: 6em; }
 
     .brands {
         text-align: center;

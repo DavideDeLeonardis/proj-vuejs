@@ -1,8 +1,8 @@
 <template>
     <div id="app">
-        <Header />
-        <Main />
-        <Footer />
+        <Header :phoneNumber="phoneNumber" />
+        <Main :phoneNumber="phoneNumber" />
+        <Footer :phoneNumber="phoneNumber" />
 
         <div class="message">
             <div class="container-customer-service">
@@ -29,6 +29,11 @@ export default {
         Header,
         Main,
         Footer
+    },
+    data() {
+        return {
+            phoneNumber: "(555) 802-1234"
+        }
     }
 };
 </script>

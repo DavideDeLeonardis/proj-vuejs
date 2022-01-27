@@ -12,34 +12,16 @@
             </div>
 
             <!-- lists -->
-            <div class="col-right">
-                <h4>Services</h4>
+            <div 
+                v-for="(list, index) in lists"
+                :key="`H${index}`"
+                class="col-right"
+            >
+                <h4>{{ list.heading }}</h4>
                 <ul>
                     <li
-                        v-for="(link, index) in servicesLinks"
-                        :key="`B${index}`"
-                    >
-                        <a href="#">{{ link }}</a>
-                    </li>
-                </ul>
-            </div>
-            <div class="col-right">
-                <h4>Resources</h4>
-                <ul>
-                    <li
-                        v-for="(link, index) in resourcesLinks"
-                        :key="`C${index}`"
-                    >
-                        <a href="#">{{ link }}</a>
-                    </li>
-                </ul>
-            </div>
-            <div class="col-right">
-                <h4>Company</h4>
-                <ul>
-                    <li
-                        v-for="(link, index) in companyLinks"
-                        :key="`D${index}`"
+                        v-for="(link, index) in list.links"
+                        :key="`I${index}`"
                     >
                         <a href="#">{{ link }}</a>
                     </li>
@@ -48,7 +30,7 @@
 
             <div class="col-bottom">
                 <span>2020 AvadaConsulting Powered by Wordpress</span>
-                <a href="#">Call Us (555) 802-1234</a>
+                <a href="#">Call Us {{ phoneNumber }}</a>
                 <span>info@yourcompany.com</span>
             </div>
         </div>
@@ -58,6 +40,11 @@
 <script>
 export default {
     name: 'Footer',
+    props: {
+        phoneNumber: {
+            type: String
+        }
+    },
     data() {
         return {
             socials: [
@@ -68,25 +55,36 @@ export default {
                 'linkedin-in',
                 'tiktok'
             ],
-            servicesLinks: [
-                'Home',
-                'Services',
-                'Why Us',
-                'Case Studies',
-                'About',
-                'Blog'
-            ],
-            resourcesLinks: [
-                'Marketing Plan', 
-                'Sales Development', 
-                'Digital Marketing', 
-                'Pricing, Why Us', 
-                'Case Study'
-            ],
-            companyLinks: [
-                'Who We Are',
-                'Contact Us',
-                'Careers'
+            lists: [
+                {
+                    heading: "Services",
+                    links: [
+                        'Home',
+                        'Services',
+                        'Why Us',
+                        'Case Studies',
+                        'About',
+                        'Blog'
+                    ]
+                },
+                {
+                    heading: "Resources",
+                    links: [
+                        'Marketing Plan', 
+                        'Sales Development', 
+                        'Digital Marketing', 
+                        'Pricing, Why Us', 
+                        'Case Study'
+                    ]
+                },
+                {
+                    heading: "Company",
+                    links: [
+                        'Who We Are',
+                        'Contact Us',
+                        'Careers'
+                    ]
+                }
             ]
         }
     }

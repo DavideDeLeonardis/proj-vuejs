@@ -2,45 +2,23 @@
     <main>
         <div class="container">
             <!-- intro -->
-            <section class="container-intro intro">
-                <img src="../assets/img/technology_thumbnail-1-400x300.jpg" alt="img intro main">
+            <section 
+                v-for="(intro, index) in intros"
+                :key="`B${index}`"
+                class="container-intro intro"
+            >
+                <img 
+                    :src="require(`../assets/img/${intro.img}`)" 
+                    :alt="intro.alt"
+                >
 
                 <div class="feature">
                     <span>
-                        <font-awesome-icon :icon="['fab', 'bandcamp']" />Business growth
+                        <font-awesome-icon :icon="[intro.prefix, intro.icon]" />{{ intro.subheading }}
                     </span>
-                    <h2>Increase brand awarness</h2>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit quaerat, aliquam a 
-                        architecto aspernatur dolores enim maiores ipsa natus, porro et ab voluptatem placeat illum nisi quo doloribus iusto eius!</p>
-                    <button>Get a Consultation</button>
-                </div>
-            </section>
-
-            <section class="container-intro intro order-intro">
-                <div class="feature">
-                    <span>
-                        <font-awesome-icon :icon="['fab', 'squarespace']" />Investors in people
-                    </span>
-                    <h2>In-House sales training</h2>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit quaerat, aliquam a 
-                        architecto aspernatur dolores enim maiores ipsa natus, porro et ab voluptatem placeat illum nisi quo doloribus iusto eius!</p>
-                    <button>Get a Consultation</button>
-                </div>
-                
-                <img src="../assets/img/construction_thumbnail-400x300.jpg" alt="img intro main">
-            </section>
-
-            <section class="container-intro intro">
-                <img src="../assets/img/cryptocurrency-400x300.jpg" alt="img intro main">
-
-                <div class="feature">
-                    <span>
-                        <font-awesome-icon :icon="['fas', 'users']" />Social media analysis
-                    </span>
-                    <h2>Harness your social proof</h2>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit quaerat, aliquam a 
-                        architecto aspernatur dolores enim maiores ipsa natus, porro et ab voluptatem placeat illum nisi quo doloribus iusto eius!</p>
-                    <button>Get a Consultation</button>
+                    <h2>{{ intro.heading }}</h2>
+                    <p>{{ intro.text }}</p>
+                    <button>{{ intro.button }}</button>
                 </div>
             </section>
 
@@ -52,8 +30,8 @@
                 <div class="container-brands">
                     <img 
                         v-for="(brand, index) in brands" 
-                        :key="`A${index}`" 
-                        :src="brand.img" 
+                        :key="`C${index}`" 
+                        :src="require(`../assets/img/${brand.img}`)"
                         :alt="brand.alt"
                     >
                 </div>
@@ -69,7 +47,7 @@
                     <span>Drive Leads and Sales with Avada</span>
                     <button>
                         <font-awesome-icon icon="phone-alt" />
-                        <a href="#">(555) 802-1234</a>
+                        <a href="#">{{ phoneNumber }}</a>
                     </button>
                 </div>
             </section>
@@ -78,29 +56,20 @@
             <section class="trust">
                 <h2>Trusted by Leading Organization</h2>
                 <div class="container-cases">
-                    <div class="case">
+                    <div 
+                        v-for="(testimonial, index) in testimonials"
+                        :key="`D${index}`"
+                        class="case"
+                    >
                         <div class="img-color">
-                            <img src="../assets/img/case-studies-1-400x450.jpg" alt="img case study">
+                            <img 
+                                :src="require(`../assets/img/${testimonial.img}`)" 
+                                :alt="testimonial.alt"
+                            >
                         </div>
-                        <p>How Spaces attracted five million visitors by improving the content</p>
-                        <div>200%</div>
-                        <span>Higher revenue from digital</span>
-                    </div>
-                    <div class="case">
-                        <div class="img-color">
-                            <img src="../assets/img/case-studies-4-400x450.jpg" alt="img case study">
-                        </div>
-                        <p>Creativity helped Hemisferio increase their brand reach vertically</p>
-                        <div>10x</div>
-                        <span>Sales increase with the same ad spend</span>
-                    </div>
-                    <div class="case">
-                        <div class="img-color">
-                            <img src="../assets/img/case-studies-6-400x450.jpg" alt="img case study">
-                        </div>
-                        <p>How DigitalBox used AI- powered data insight to boost sales</p>
-                        <div>3-year</div>
-                        <span>Partnership with Avada Consultant</span>
+                        <p>{{ testimonial.text }}</p>
+                        <div>{{ testimonial.heading }}</div>
+                        <span>{{ testimonial.subheading }}</span>
                     </div>
                 </div>
                 <button>Read more case studies</button>
@@ -129,25 +98,15 @@
                         <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nihil officia odit dolore ipsam sapiente quisquam.</p>
                     </div>
                     <div class="col">
-                       <div class="col-left">
-                            <font-awesome-icon :icon="['fas', 'plus-square']" />
+                        <div 
+                            v-for="(quality, index) in qualities"
+                            :key="`E${index}`"
+                            class="col-left"
+                        >
+                            <font-awesome-icon :icon="[quality.prefix, quality.icon]" />
                             <div class="content-middle">
-                                <h5>Accountability</h5>
-                                <p>Lorem ipsum dolor sit amet.</p>
-                            </div>
-                        </div>
-                        <div class="col-left">
-                            <font-awesome-icon :icon="['fas', 'plus-square']" />
-                            <div class="content-middle">
-                                <h5>Transparency</h5>
-                                <p>Lorem ipsum dolor sit amet.</p>
-                            </div>
-                        </div>
-                       <div class="col-left">
-                            <font-awesome-icon :icon="['fas', 'plus-square']" />
-                            <div class="content-middle">
-                                <h5>Investment</h5>
-                                <p>Lorem ipsum dolor sit amet.</p>
+                                <h5>{{ quality.heading }}</h5>
+                                <p>{{ quality.text }}</p>
                             </div>
                         </div>
                     </div>
@@ -158,10 +117,13 @@
                     <div class="container-awards">
                         <div 
                             v-for="(award, index) in awards" 
-                            :key="`B${index}`" 
+                            :key="`F${index}`" 
                             class="award"
                         >
-                            <img :src="award.img" :alt="award.alt">
+                            <img 
+                                :src="require(`../assets/img/${award.img}`)" 
+                                :alt="award.alt"
+                            >
                             <span>{{ award.text }}</span>
                         </div>
                     </div>
@@ -192,23 +154,18 @@
                 </div>
 
                 <div class="container-cases">
-                    <div class="case">
+                    <div 
+                        v-for="(resource, index) in resources"
+                        :key="`G${index}`"
+                        class="case"
+                    >
                         <div class="img-color">
-                            <img src="../assets/img/blog-posts-6-200x133.jpg" alt="img resource">
+                            <img 
+                                :src="require(`../assets/img/${resource.img}`)" 
+                                :alt="resource.alt"
+                            >
                         </div>
-                        <p>Marketing tips nad tricks for your website</p>
-                    </div>
-                    <div class="case">
-                        <div class="img-color">
-                            <img src="../assets/img/blog-posts-5-200x133.jpg" alt="img resource">
-                        </div>
-                        <p>How to write stunning blog post titles</p>
-                    </div>
-                    <div class="case">
-                        <div class="img-color">
-                            <img src="../assets/img/blog-posts-4-200x133.jpg" alt="img resource">
-                        </div>
-                        <p>Techniques to reduce facebook ads spend</p>
+                        <p>{{ resource.text }}</p>
                     </div>
                 </div>
             </section>
@@ -233,7 +190,7 @@
                     <span class="card-info">Marketing Consultant Expert</span>
                     <div>
                         <font-awesome-icon icon="phone-alt" />
-                        <a href="#">(555) 802-1234</a>
+                        <a href="#">{{ phoneNumber }}</a>
                     </div>
                     <form>
                         <input type="text" placeholder="Your Name*">
@@ -251,54 +208,151 @@
 <script>
 export default {
     name: 'Main',
+    props: {
+        phoneNumber: {
+            type: String
+        }
+    },
     data() {
         return {
+            intros: [
+                {
+                    "img": "technology_thumbnail-1-400x300.jpg",
+                    "alt": "img 1 intro main",
+                    "prefix": "fab",
+                    "icon": "bandcamp",
+                    "subheading": "Business growth",
+                    "heading": "Increase brand awarness",
+                    "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit quaerat, aliquam a architecto aspernatur dolores enim maiores ipsa natus, porro et ab voluptatem placeat illum nisi quo doloribus iusto eius!",
+                    "button": "Get a Consultation"
+                },
+                {
+                    "img": "construction_thumbnail-400x300.jpg",
+                    "alt": "img 2 intro main",
+                    "prefix": "fab",
+                    "icon": "squarespace",
+                    "subheading": "Investors in people",
+                    "heading": "In-House sales training",
+                    "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit quaerat, aliquam a architecto aspernatur dolores enim maiores ipsa natus, porro et ab voluptatem placeat illum nisi quo doloribus iusto eius!",
+                    "button": "Get a Consultation"
+                },
+                {
+                    "img": "cryptocurrency-400x300.jpg",
+                    "alt": "img 3 intro main",
+                    "prefix": "fas",
+                    "icon": "users",
+                    "subheading": "Social media analysis",
+                    "heading": "Harness your social proof",
+                    "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit quaerat, aliquam a architecto aspernatur dolores enim maiores ipsa natus, porro et ab voluptatem placeat illum nisi quo doloribus iusto eius!",
+                    "button": "Get a Consultation"
+                }
+            ],
+            testimonials: [
+                {
+                    "img": "case-studies-1-400x450.jpg",
+                    "alt": "img 1 case study",
+                    "text": "How Spaces attracted five million visitors by improving the content",
+                    "heading": "200%",
+                    "subheading": "Higher revenue from digital"
+                },
+                {
+                    "img": "case-studies-4-400x450.jpg",
+                    "alt": "img 2 case study",
+                    "text": "Creativity helped Hemisferio increase their brand reach vertically",
+                    "heading": "10x",
+                    "subheading": "Sales increase with the same ad spend"
+                },
+                {
+                    "img": "case-studies-6-400x450.jpg",
+                    "alt": "img 3 case study",
+                    "text": "How DigitalBox used AI- powered data insight to boost sales",
+                    "heading": "3-year",
+                    "subheading": "Partnership with Avada Consultant"
+                }
+            ],
+            qualities: [
+                {
+                    "prefix": "fas",
+                    "icon": "plus-square",
+                    "heading": "Accountability",
+                    "text": "Lorem ipsum dolor sit amet"
+                },
+                {
+                    "prefix": "fas",
+                    "icon": "plus-square",
+                    "heading": "Transparency",
+                    "text": "Lorem ipsum dolor sit amet"
+                },
+                {
+                    "prefix": "fas",
+                    "icon": "plus-square",
+                    "heading": "Investment",
+                    "text": "Lorem ipsum dolor sit amet"
+                }
+            ],
             brands: [
                 {
-                    "img": require('../assets/img/abstract.png'),
+                    "img": "abstract.png",
                     "alt": "logo Abstract"
                 },
                 {
-                    "img": require('../assets/img/cglobal.png'),
+                    "img": "cglobal.png",
                     "alt": "logo CGlobal"
                 },
                 {
-                    "img": require('../assets/img/next.png'),
+                    "img": "next.png",
                     "alt": "logo Next"
                 },
                 {
-                    "img": require('../assets/img/hemisferio.png'),
+                    "img": "hemisferio.png",
                     "alt": "logo Hemisferio"
                 },
                 {
-                    "img": require('../assets/img/spaces.png'),
+                    "img": "spaces.png",
                     "alt": "logo Spaces"
                 },
                 {
-                    "img": require('../assets/img/digitalbox.png'),
+                    "img": "digitalbox.png",
                     "alt": "logo Digitalbox"
                 }
             ],
             awards: [
                 {
-                    "img": require('../assets/img/award-a-200x191.png'),
+                    "img": "award-a-200x191.png",
                     "alt": "img award",
                     "text": "Winner Seo Master MAGT Smart Start Award 2017"
                 },
                 {
-                    "img": require('../assets/img/award-b-200x191.png'),
+                    "img": "award-b-200x191.png",
                     "alt": "img award",
                     "text": "Top Social Media Agencies Next Partner 2018"
                 },
                 {
-                    "img": require('../assets/img/award-c-200x191.png'),
+                    "img": "award-c-200x191.png",
                     "alt": "img award",
                     "text": "10 Fastest Growing Abstract Solution Providers 2019"
                 },
                 {
-                    "img": require('../assets/img/award-d-200x191.png'),
+                    "img": "award-d-200x191.png",
                     "alt": "img award",
                     "text": "National Excellence Agencie Award Winner 020"
+                }
+            ],
+            resources: [
+                {
+                    "img": "blog-posts-6-200x133.jpg",
+                    "alt": "img 1 resource",
+                    "text": "Marketing tips nad tricks for your website"
+                },
+                {
+                    "img": "blog-posts-5-200x133.jpg",
+                    "alt": "img 2 resource",
+                    "text": "How to write stunning blog post titles"
+                },
+                {
+                    "img": "blog-posts-4-200x133.jpg",
+                    "alt": "img 3 resource",
+                    "text": "Techniques to reduce facebook ads spend"
                 }
             ]
         }
